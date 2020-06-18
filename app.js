@@ -7,8 +7,11 @@ import pug from "pug";
 import path from "path";
 import helmet from "helmet";
 import morgan from "morgan";
-import route from "./routes";
+import routes from "./routes";
+import { localMiddleware } from "./middlewares";
 import globalRouter from "./routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
 
 const app = express();
 
@@ -18,8 +21,12 @@ app.set("views", "./views");
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(morgan("dev"));
-app.use(route.home, globalRouter);
+
+app.use(localMiddleware);
+
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 export default app;

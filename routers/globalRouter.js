@@ -1,19 +1,30 @@
 /** @format */
 
 import { Router } from "express";
-import route from "../routes";
+import routes from "../routes";
 import {
   getJoin,
   getLogin,
-  getLogout,
-  getHome,
+  home,
+  logout,
+  postJoin,
+  postLogin,
+  me,
 } from "../controller/userController";
+import { search } from "../controller/videoController";
 
 const globalRouter = Router();
 
-globalRouter.get(route.home, getHome);
-globalRouter.get(route.join, getJoin);
-globalRouter.get(route.login, getLogin);
-globalRouter.get(route.logout, getLogout);
+globalRouter.get(routes.join, getJoin);
+globalRouter.post(routes.join, postJoin);
+
+globalRouter.get(routes.login, getLogin);
+globalRouter.post(routes.login, postLogin);
+
+globalRouter.get(routes.home, home);
+globalRouter.get(routes.search, search);
+globalRouter.get(routes.me, me);
+
+globalRouter.get(routes.logout, logout);
 
 export default globalRouter;
