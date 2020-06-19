@@ -12,7 +12,7 @@ import {
 
 const userRouter = Router();
 
-userRouter.get(routes.userDetail, userDetail);
+userRouter.get(routes.userDetail(), userDetail);
 
 userRouter.get(routes.editProfile, getEditProfile);
 userRouter.post(routes.editProfile, postEditProfile);

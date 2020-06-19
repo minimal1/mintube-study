@@ -1,4 +1,15 @@
 /** @format */
+import Video from "../model/Video";
+
+export const home = async (req, res) => {
+  try {
+    const videos = await Video.find({});
+    res.render("home", { pageTitle: "Home", videos });
+  } catch (error) {
+    console.log(error);
+    res.render("home", { pageTitle: "Home", videos: [] });
+  }
+};
 
 export const search = (req, res) => {
   res.render("search", { pageTitle: "Search" });

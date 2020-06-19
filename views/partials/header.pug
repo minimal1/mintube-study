@@ -9,6 +9,8 @@ header.header
         .header__column
             ul
                 li
-                    a(href=routes.join) Join
+                    a(href=`/videos${routes.upload}`) Upload
                 li
-                    a(href=routes.login) Login
+                    a(href=routes.me) Profile
+                li
+                    a(href=routes.logout) Logout

@@ -19,5 +19,7 @@ module.exports = {
     "no-console": "off",
     "object-shorthand": "off",
     "no-else-return": "off",
+    "no-unused-vars": "off",
+    "import/first": "off",
   },
 };

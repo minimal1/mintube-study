@@ -5,13 +5,12 @@ import routes from "../routes";
 import {
   getJoin,
   getLogin,
-  home,
   logout,
   postJoin,
   postLogin,
   me,
 } from "../controller/userController";
-import { search } from "../controller/videoController";
+import { search, home } from "../controller/videoController";
 
 const globalRouter = Router();
 

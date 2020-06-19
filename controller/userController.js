@@ -1,8 +1,4 @@
 /** @format */
-export const home = (req, res) => {
-  console.log(req);
-  res.render("home", { pageTitle: "Home" });
-};
 
 export const getJoin = (req, res) => {
   console.log(req);
